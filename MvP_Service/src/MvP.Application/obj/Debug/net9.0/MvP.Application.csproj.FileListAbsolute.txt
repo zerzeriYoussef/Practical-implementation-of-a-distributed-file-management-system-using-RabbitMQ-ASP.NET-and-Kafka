@@ -1,0 +1,16 @@
+C:\amamo\MvP_Service\src\MvP.Application\bin\Debug\net9.0\MvP.Application.deps.json
+C:\amamo\MvP_Service\src\MvP.Application\bin\Debug\net9.0\MvP.Application.dll
+C:\amamo\MvP_Service\src\MvP.Application\bin\Debug\net9.0\MvP.Application.pdb
+C:\amamo\MvP_Service\src\MvP.Application\bin\Debug\net9.0\MvP.Domain.dll
+C:\amamo\MvP_Service\src\MvP.Application\bin\Debug\net9.0\MvP.Domain.pdb
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.csproj.AssemblyReference.cache
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.AssemblyInfoInputs.cache
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.AssemblyInfo.cs
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.csproj.CoreCompileInputs.cache
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.sourcelink.json
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Appl.C7D2DCF2.Up2Date
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.dll
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\refint\MvP.Application.dll
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.pdb
+C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\ref\MvP.Application.dll

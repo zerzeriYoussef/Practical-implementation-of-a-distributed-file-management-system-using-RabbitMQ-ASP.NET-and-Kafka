@@ -1,0 +1,12 @@
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\bin\Debug\net9.0\JwtAuthDemo.Domain.deps.json
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\bin\Debug\net9.0\JwtAuthDemo.Domain.dll
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\bin\Debug\net9.0\JwtAuthDemo.Domain.pdb
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\JwtAuthDemo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\JwtAuthDemo.Domain.AssemblyInfoInputs.cache
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\JwtAuthDemo.Domain.AssemblyInfo.cs
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\JwtAuthDemo.Domain.csproj.CoreCompileInputs.cache
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\JwtAuthDemo.Domain.sourcelink.json
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\JwtAuthDemo.Domain.dll
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\refint\JwtAuthDemo.Domain.dll
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\JwtAuthDemo.Domain.pdb
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\ref\JwtAuthDemo.Domain.dll

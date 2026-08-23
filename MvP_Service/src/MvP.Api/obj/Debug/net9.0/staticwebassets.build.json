@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "C0ZrM9Ntx+6Ywi9BV6ATp45lUDWJLSBhDQV+Cguwjao=",
+  "Source": "MvP.Api",
+  "BasePath": "_content/MvP.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

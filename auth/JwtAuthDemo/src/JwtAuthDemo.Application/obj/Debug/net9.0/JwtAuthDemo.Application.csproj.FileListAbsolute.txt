@@ -1,0 +1,16 @@
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\bin\Debug\net9.0\JwtAuthDemo.Application.deps.json
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\bin\Debug\net9.0\JwtAuthDemo.Application.dll
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\bin\Debug\net9.0\JwtAuthDemo.Application.pdb
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\bin\Debug\net9.0\JwtAuthDemo.Domain.dll
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\bin\Debug\net9.0\JwtAuthDemo.Domain.pdb
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDemo.Application.csproj.AssemblyReference.cache
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDemo.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDemo.Application.AssemblyInfoInputs.cache
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDemo.Application.AssemblyInfo.cs
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDemo.Application.csproj.CoreCompileInputs.cache
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDemo.Application.sourcelink.json
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthD.85CF72AA.Up2Date
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDemo.Application.dll
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\refint\JwtAuthDemo.Application.dll
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDemo.Application.pdb
+C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\ref\JwtAuthDemo.Application.dll

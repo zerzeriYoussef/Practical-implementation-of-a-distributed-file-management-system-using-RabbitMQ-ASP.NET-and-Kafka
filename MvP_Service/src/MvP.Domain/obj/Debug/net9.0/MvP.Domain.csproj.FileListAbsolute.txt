@@ -1,0 +1,12 @@
+C:\amamo\MvP_Service\src\MvP.Domain\bin\Debug\net9.0\MvP.Domain.deps.json
+C:\amamo\MvP_Service\src\MvP.Domain\bin\Debug\net9.0\MvP.Domain.dll
+C:\amamo\MvP_Service\src\MvP.Domain\bin\Debug\net9.0\MvP.Domain.pdb
+C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\MvP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\MvP.Domain.AssemblyInfoInputs.cache
+C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\MvP.Domain.AssemblyInfo.cs
+C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\MvP.Domain.csproj.CoreCompileInputs.cache
+C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\MvP.Domain.sourcelink.json
+C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\MvP.Domain.dll
+C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\refint\MvP.Domain.dll
+C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\MvP.Domain.pdb
+C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\ref\MvP.Domain.dll

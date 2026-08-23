@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "J30ui1tPmkfgTVJDIhuow5FbsSH4Or2tJimjSxsCOq8=",
+  "Source": "JwtAuthDemo.Api",
+  "BasePath": "_content/JwtAuthDemo.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
