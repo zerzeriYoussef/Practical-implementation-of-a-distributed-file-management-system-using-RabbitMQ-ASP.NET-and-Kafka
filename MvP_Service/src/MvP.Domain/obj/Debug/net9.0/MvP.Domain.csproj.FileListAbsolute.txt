@@ -10,3 +10,9 @@ C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\MvP.Domain.dll
 C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\refint\MvP.Domain.dll
 C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\MvP.Domain.pdb
 C:\amamo\MvP_Service\src\MvP.Domain\obj\Debug\net9.0\ref\MvP.Domain.dll
+C:\amamo\buildcheck\mvp\MvP.Domain.deps.json
+C:\amamo\buildcheck\mvp\MvP.Domain.dll
+C:\amamo\buildcheck\mvp\MvP.Domain.pdb
+C:\amamo\buildcheck\mvp-postgres\MvP.Domain.deps.json
+C:\amamo\buildcheck\mvp-postgres\MvP.Domain.dll
+C:\amamo\buildcheck\mvp-postgres\MvP.Domain.pdb

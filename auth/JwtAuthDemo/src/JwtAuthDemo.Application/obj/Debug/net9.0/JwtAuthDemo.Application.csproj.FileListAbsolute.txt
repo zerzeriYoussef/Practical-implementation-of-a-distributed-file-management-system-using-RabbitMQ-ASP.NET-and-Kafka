@@ -14,3 +14,6 @@ C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDe
 C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\refint\JwtAuthDemo.Application.dll
 C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\JwtAuthDemo.Application.pdb
 C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Application\obj\Debug\net9.0\ref\JwtAuthDemo.Application.dll
+C:\amamo\buildcheck\auth\JwtAuthDemo.Application.deps.json
+C:\amamo\buildcheck\auth\JwtAuthDemo.Application.dll
+C:\amamo\buildcheck\auth\JwtAuthDemo.Application.pdb

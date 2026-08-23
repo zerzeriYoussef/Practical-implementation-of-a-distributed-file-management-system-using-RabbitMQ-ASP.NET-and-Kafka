@@ -51,13 +51,19 @@ public sealed class AuthController : ControllerBase
     [HttpGet("me")]
     public ActionResult GetCurrentUser()
     {
+        var authorizationHeader = Request.Headers.Authorization.ToString();
+        var token = authorizationHeader.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase)
+            ? authorizationHeader["Bearer ".Length..].Trim()
+            : authorizationHeader;
+
         var user = new
         {
             Id = User.FindFirstValue(ClaimTypes.NameIdentifier),
             UserName = User.FindFirstValue(ClaimTypes.Name),
             Email = User.FindFirstValue(ClaimTypes.Email),
             FirstName = User.FindFirstValue(ClaimTypes.GivenName),
-            LastName = User.FindFirstValue(ClaimTypes.Surname)
+            LastName = User.FindFirstValue(ClaimTypes.Surname),
+            Token = token
         };
 
         return Ok(user);

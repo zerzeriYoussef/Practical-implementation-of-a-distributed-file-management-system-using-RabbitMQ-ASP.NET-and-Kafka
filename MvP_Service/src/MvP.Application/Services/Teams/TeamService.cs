@@ -7,11 +7,13 @@ namespace MvP.Application.Services.Teams
 {
     public class TeamService 
     {
-        private readonly TeamRepository _teamRepository;
+        private readonly ITeamRepository _teamRepository;
+        private readonly ICurrentUser _currentUser;
 
-        public TeamService(TeamRepository teamRepository)
+        public TeamService(ITeamRepository teamRepository, ICurrentUser currentUser)
         {
             _teamRepository = teamRepository;
+            _currentUser = currentUser;
         }
 
         public async Task<CreateTeamResponse> CreateTeamAsync(CreateTeamRequest request)
@@ -21,7 +23,7 @@ namespace MvP.Application.Services.Teams
                 Id = Guid.NewGuid(),
                 Name = request.Name,
                 JoinCode = GenerateJoinCode(),
-                OwnerId = request.OwnerId,
+                OwnerId = _currentUser.UserId,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             };
@@ -29,6 +31,43 @@ namespace MvP.Application.Services.Teams
             await _teamRepository.AddAsync(team);
 
             return new CreateTeamResponse(team.Id, team.Name, team.JoinCode);
+        }
+
+        public async Task<IReadOnlyCollection<TeamListItemResponse>> GetTeamsAsync()
+        {
+            var teams = await _teamRepository.GetAllAsync();
+
+            return teams
+                .Select(team => new TeamListItemResponse(
+                    team.Id,
+                    team.Name,
+                    team.JoinCode,
+                    team.OwnerId,
+                    team.CreatedAt))
+                .ToList();
+        }
+
+        public async Task<TeamMembersResponse> GetTeamMembersAsync(Guid teamId)
+        {
+            var team = await _teamRepository.GetByIdWithMembersAsync(teamId);
+            if (team == null)
+            {
+                throw new InvalidOperationException("Team not found");
+            }
+
+            var members = team.Members
+                .Select(member => new TeamMemberResponse(
+                    member.UserId,
+                    team.OwnerId == member.UserId ? "Owner" : "Member",
+                    member.CreatedAt))
+                .ToList();
+
+            if (team.OwnerId.HasValue && members.All(member => member.UserId != team.OwnerId.Value))
+            {
+                members.Insert(0, new TeamMemberResponse(team.OwnerId.Value, "Owner", team.CreatedAt));
+            }
+
+            return new TeamMembersResponse(team.Id, team.Name, team.OwnerId, members);
         }
 
         public async Task<JoinTeamResponse> JoinTeamAsync(JoinTeamRequest request)
@@ -44,7 +83,7 @@ namespace MvP.Application.Services.Teams
             {
                 Id = Guid.NewGuid(),
                 TeamId = team.Id,
-                UserId = request.UserId,
+                UserId = _currentUser.UserId,
                 Permissions = TeamMemberPermission.None,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
@@ -69,6 +108,11 @@ namespace MvP.Application.Services.Teams
                 throw new InvalidOperationException("Team not found");
             }
 
+            if (team.OwnerId != _currentUser.UserId)
+            {
+                throw new UnauthorizedAccessException("Only the team owner can remove members.");
+            }
+
             if (team.OwnerId == userId)
             {
                 throw new InvalidOperationException("Cannot remove the team owner");
@@ -84,8 +128,10 @@ namespace MvP.Application.Services.Teams
             await _teamRepository.SaveChangesAsync();
         }
 
-        public async Task LeaveTeamAsync(Guid teamId, Guid userId)
+        public async Task LeaveTeamAsync(Guid teamId)
         {
+            var userId = _currentUser.UserId;
+
             var team = await _teamRepository.GetByIdAsync(teamId);
             if (team == null)
             {

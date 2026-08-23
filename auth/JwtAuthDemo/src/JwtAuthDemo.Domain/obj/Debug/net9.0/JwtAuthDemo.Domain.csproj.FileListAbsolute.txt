@@ -10,3 +10,6 @@ C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\JwtAuthDemo.Do
 C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\refint\JwtAuthDemo.Domain.dll
 C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\JwtAuthDemo.Domain.pdb
 C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Domain\obj\Debug\net9.0\ref\JwtAuthDemo.Domain.dll
+C:\amamo\buildcheck\auth\JwtAuthDemo.Domain.deps.json
+C:\amamo\buildcheck\auth\JwtAuthDemo.Domain.dll
+C:\amamo\buildcheck\auth\JwtAuthDemo.Domain.pdb

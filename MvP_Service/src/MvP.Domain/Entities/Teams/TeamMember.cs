@@ -7,6 +7,7 @@ namespace MvP.Domain.Entities.Teams
     {
         public Guid Id { get; set; }
         public Guid TeamId { get; set; }
+        public Team Team { get; set; } = null!;
         public Guid UserId { get; set; }
         public TeamMemberPermission Permissions { get; set; }
         public DateTime CreatedAt { get; set; }

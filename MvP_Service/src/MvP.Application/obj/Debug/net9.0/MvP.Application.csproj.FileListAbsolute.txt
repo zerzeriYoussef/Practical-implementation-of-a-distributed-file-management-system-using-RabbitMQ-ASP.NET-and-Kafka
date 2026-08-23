@@ -14,3 +14,9 @@ C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.dll
 C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\refint\MvP.Application.dll
 C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\MvP.Application.pdb
 C:\amamo\MvP_Service\src\MvP.Application\obj\Debug\net9.0\ref\MvP.Application.dll
+C:\amamo\buildcheck\mvp\MvP.Application.deps.json
+C:\amamo\buildcheck\mvp\MvP.Application.dll
+C:\amamo\buildcheck\mvp\MvP.Application.pdb
+C:\amamo\buildcheck\mvp-postgres\MvP.Application.deps.json
+C:\amamo\buildcheck\mvp-postgres\MvP.Application.dll
+C:\amamo\buildcheck\mvp-postgres\MvP.Application.pdb

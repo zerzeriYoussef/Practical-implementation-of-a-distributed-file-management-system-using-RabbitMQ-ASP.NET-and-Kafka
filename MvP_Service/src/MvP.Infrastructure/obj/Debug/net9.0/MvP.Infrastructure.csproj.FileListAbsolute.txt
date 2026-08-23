@@ -16,3 +16,9 @@ C:\amamo\MvP_Service\src\MvP.Infrastructure\obj\Debug\net9.0\MvP.Infrastructure.
 C:\amamo\MvP_Service\src\MvP.Infrastructure\obj\Debug\net9.0\refint\MvP.Infrastructure.dll
 C:\amamo\MvP_Service\src\MvP.Infrastructure\obj\Debug\net9.0\MvP.Infrastructure.pdb
 C:\amamo\MvP_Service\src\MvP.Infrastructure\obj\Debug\net9.0\ref\MvP.Infrastructure.dll
+C:\amamo\buildcheck\mvp\MvP.Infrastructure.deps.json
+C:\amamo\buildcheck\mvp\MvP.Infrastructure.dll
+C:\amamo\buildcheck\mvp\MvP.Infrastructure.pdb
+C:\amamo\buildcheck\mvp-postgres\MvP.Infrastructure.deps.json
+C:\amamo\buildcheck\mvp-postgres\MvP.Infrastructure.dll
+C:\amamo\buildcheck\mvp-postgres\MvP.Infrastructure.pdb

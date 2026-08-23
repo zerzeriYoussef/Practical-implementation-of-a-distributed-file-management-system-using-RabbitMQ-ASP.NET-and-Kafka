@@ -52,3 +52,11 @@ C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Api\obj\Debug\net9.0\refint\JwtAuthDem
 C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Api\obj\Debug\net9.0\JwtAuthDemo.Api.pdb
 C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Api\obj\Debug\net9.0\JwtAuthDemo.Api.genruntimeconfig.cache
 C:\amamo\auth\JwtAuthDemo\src\JwtAuthDemo.Api\obj\Debug\net9.0\ref\JwtAuthDemo.Api.dll
+C:\amamo\buildcheck\auth\appsettings.Development.json
+C:\amamo\buildcheck\auth\appsettings.json
+C:\amamo\buildcheck\auth\JwtAuthDemo.Api.staticwebassets.endpoints.json
+C:\amamo\buildcheck\auth\JwtAuthDemo.Api.exe
+C:\amamo\buildcheck\auth\JwtAuthDemo.Api.deps.json
+C:\amamo\buildcheck\auth\JwtAuthDemo.Api.runtimeconfig.json
+C:\amamo\buildcheck\auth\JwtAuthDemo.Api.dll
+C:\amamo\buildcheck\auth\JwtAuthDemo.Api.pdb
