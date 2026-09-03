@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -54,6 +55,8 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddAuthorization();
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, TeamPermissionPolicyProvider>();
+builder.Services.AddScoped<IAuthorizationHandler, TeamPermissionHandler>();
 
 // --- Database ---
 builder.Services.AddDbContext<AppDbContext>(options =>

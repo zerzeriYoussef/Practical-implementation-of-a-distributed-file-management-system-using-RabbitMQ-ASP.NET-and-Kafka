@@ -276,7 +276,10 @@
         },
         "runtime": {
           "bin/placeholder/MvP.Application.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "MvP.Domain/1.0.0": {
         "type": "project",
