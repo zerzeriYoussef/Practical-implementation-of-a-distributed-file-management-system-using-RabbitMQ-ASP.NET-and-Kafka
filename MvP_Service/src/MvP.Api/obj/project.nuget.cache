@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "k18mxRyKGGU=",
+  "dgSpecHash": "ONAH8IWSDq4=",
   "success": true,
   "projectFilePath": "C:\\amamo\\MvP_Service\\src\\MvP.Api\\MvP.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Youssef\\.nuget\\packages\\awssdk.core\\4.0.102.1\\awssdk.core.4.0.102.1.nupkg.sha512",
+    "C:\\Users\\Youssef\\.nuget\\packages\\awssdk.s3\\4.0.102.4\\awssdk.s3.4.0.102.4.nupkg.sha512",
     "C:\\Users\\Youssef\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Youssef\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.4\\microsoft.aspnetcore.authentication.jwtbearer.9.0.4.nupkg.sha512",
     "C:\\Users\\Youssef\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.4\\microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",

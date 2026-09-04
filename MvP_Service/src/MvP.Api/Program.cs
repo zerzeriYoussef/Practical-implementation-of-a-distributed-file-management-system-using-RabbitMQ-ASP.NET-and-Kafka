@@ -1,13 +1,19 @@
+using Amazon;
+using Amazon.S3;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using MvP.Application.Interfaces;
+using MvP.Application.Interfaces.Storage;
+using MvP.Application.Services.Storage;
 using MvP.Application.Services.Teams;
 using MvP.Infrastructure.Auth;
 using MvP.Infrastructure.Persistence;
+using MvP.Infrastructure.Storage;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -66,7 +72,18 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();
 builder.Services.AddScoped<TeamService>();
+builder.Services.AddScoped<FileUploadService>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
+builder.Services.AddScoped<IStoredFileRepository, StoredFileRepository>();
+builder.Services.AddSingleton<IStorageKeyBuilder, S3StorageKeyBuilder>();
+builder.Services.Configure<AwsS3Options>(builder.Configuration.GetSection(AwsS3Options.SectionName));
+builder.Services.AddSingleton<IAmazonS3>(serviceProvider =>
+{
+    var options = serviceProvider.GetRequiredService<IOptions<AwsS3Options>>().Value;
+    var region = RegionEndpoint.GetBySystemName(options.Region);
+    return new AmazonS3Client(region);
+});
+builder.Services.AddScoped<IObjectStorageService, S3ObjectStorageService>();
 
 var app = builder.Build();
 

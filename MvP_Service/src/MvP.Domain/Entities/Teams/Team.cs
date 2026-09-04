@@ -12,5 +12,6 @@ namespace MvP.Domain.Entities.Teams
         public DateTime UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
         public ICollection<TeamMember> Members { get; set; } = new List<TeamMember>();
+        public ICollection<Storage.StoredFile> Files { get; set; } = new List<Storage.StoredFile>();
     }
 }

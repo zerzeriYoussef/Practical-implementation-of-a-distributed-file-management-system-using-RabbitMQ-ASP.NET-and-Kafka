@@ -22,6 +22,63 @@ namespace MvP.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("MvP.Domain.Entities.Storage.StoredFile", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("OwnerUserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("S3Bucket")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("S3Key")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<long>("SizeBytes")
+                        .HasColumnType("bigint");
+
+                    b.Property<Guid>("TeamId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UploadedByUserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerUserId");
+
+                    b.HasIndex("S3Key")
+                        .IsUnique();
+
+                    b.HasIndex("UploadedByUserId");
+
+                    b.HasIndex("TeamId", "DeletedAt");
+
+                    b.ToTable("StoredFiles");
+                });
+
             modelBuilder.Entity("MvP.Domain.Entities.Teams.Team", b =>
                 {
                     b.Property<Guid>("Id")
@@ -88,6 +145,17 @@ namespace MvP.Infrastructure.Migrations
                     b.ToTable("TeamMembers");
                 });
 
+            modelBuilder.Entity("MvP.Domain.Entities.Storage.StoredFile", b =>
+                {
+                    b.HasOne("MvP.Domain.Entities.Teams.Team", "Team")
+                        .WithMany("Files")
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Team");
+                });
+
             modelBuilder.Entity("MvP.Domain.Entities.Teams.TeamMember", b =>
                 {
                     b.HasOne("MvP.Domain.Entities.Teams.Team", "Team")
@@ -101,6 +169,8 @@ namespace MvP.Infrastructure.Migrations
 
             modelBuilder.Entity("MvP.Domain.Entities.Teams.Team", b =>
                 {
+                    b.Navigation("Files");
+
                     b.Navigation("Members");
                 });
 #pragma warning restore 612, 618

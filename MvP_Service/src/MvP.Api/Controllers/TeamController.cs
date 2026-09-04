@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MvP.Application.DTOs;
+using MvP.Application.Services.Storage;
 using MvP.Application.Services.Teams;
-using System.Security.Claims;
 
 namespace MvP.Api.Controllers;
 
@@ -12,10 +12,12 @@ namespace MvP.Api.Controllers;
 public class TeamController : ControllerBase
 {
     private readonly TeamService _teamService;
+    private readonly FileUploadService _fileUploadService;
 
-    public TeamController(TeamService teamService)
+    public TeamController(TeamService teamService, FileUploadService fileUploadService)
     {
         _teamService = teamService;
+        _fileUploadService = fileUploadService;
     }
 
     [HttpGet]
@@ -58,5 +60,26 @@ public class TeamController : ControllerBase
     {
         await _teamService.RemoveMemberAsync(teamId, userId);
         return NoContent();
+    }
+
+    [HttpPost("{teamId:guid}/files")]
+    [Consumes("multipart/form-data")]
+    public async Task<IActionResult> UploadFile(Guid teamId, IFormFile file, CancellationToken cancellationToken)
+    {
+        if (file == null || file.Length == 0)
+        {
+            return BadRequest("File is required.");
+        }
+
+        await using var stream = file.OpenReadStream();
+        var response = await _fileUploadService.UploadTeamFileAsync(
+            teamId,
+            file.FileName,
+            file.ContentType,
+            file.Length,
+            stream,
+            cancellationToken);
+
+        return Ok(response);
     }
 }
