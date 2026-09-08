@@ -6,4 +6,5 @@ public sealed class AwsS3Options
 
     public string BucketName { get; init; } = string.Empty;
     public string Region { get; init; } = string.Empty;
+    public int PresignedUrlExpirationMinutes { get; init; } = 5;
 }

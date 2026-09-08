@@ -72,7 +72,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();
 builder.Services.AddScoped<TeamService>();
-builder.Services.AddScoped<FileUploadService>();
+builder.Services.AddScoped<StorageService>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 builder.Services.AddScoped<IStoredFileRepository, StoredFileRepository>();
 builder.Services.AddSingleton<IStorageKeyBuilder, S3StorageKeyBuilder>();

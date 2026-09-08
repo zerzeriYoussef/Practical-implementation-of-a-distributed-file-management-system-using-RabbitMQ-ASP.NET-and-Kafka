@@ -8,4 +8,5 @@ public enum TeamMemberPermission
     Edit = 2,
     Delete = 4,
     Upload = 8,
+    Download = 16,
 }
