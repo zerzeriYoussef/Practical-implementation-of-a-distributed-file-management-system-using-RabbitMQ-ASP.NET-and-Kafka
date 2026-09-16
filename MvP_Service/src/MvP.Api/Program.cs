@@ -14,6 +14,7 @@ using MvP.Application.Services.Teams;
 using MvP.Infrastructure.Auth;
 using MvP.Infrastructure.Persistence;
 using MvP.Infrastructure.Storage;
+using MvP.Infrastructure.Messaging;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -84,6 +85,8 @@ builder.Services.AddSingleton<IAmazonS3>(serviceProvider =>
     return new AmazonS3Client(region);
 });
 builder.Services.AddScoped<IObjectStorageService, S3ObjectStorageService>();
+builder.Services.Configure<RabbitMqOptions>(builder.Configuration.GetSection(RabbitMqOptions.SectionName));
+builder.Services.AddSingleton<IFileProcessingPublisher, RabbitMqFileProcessingPublisher>();
 
 var app = builder.Build();
 

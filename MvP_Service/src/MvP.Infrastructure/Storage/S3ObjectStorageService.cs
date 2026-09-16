@@ -52,6 +52,18 @@ public sealed class S3ObjectStorageService : IObjectStorageService
         await _s3Client.PutObjectAsync(request, cancellationToken);
     }
 
+    public async Task<ObjectStorageMetadata> GetMetadataAsync(
+        string key,
+        CancellationToken cancellationToken = default)
+    {
+        var response = await _s3Client.GetObjectMetadataAsync(
+            _options.BucketName,
+            key,
+            cancellationToken);
+
+        return new ObjectStorageMetadata(response.Headers.ContentType, response.ContentLength, response.ETag);
+    }
+
     public Task<PresignedDownloadUrl> GenerateDownloadUrlAsync(
         string key,
         string downloadFileName,

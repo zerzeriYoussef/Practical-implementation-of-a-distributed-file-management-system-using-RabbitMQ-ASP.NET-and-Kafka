@@ -10,6 +10,10 @@ public interface IObjectStorageService
         string contentType,
         CancellationToken cancellationToken = default);
 
+    Task<ObjectStorageMetadata> GetMetadataAsync(
+        string key,
+        CancellationToken cancellationToken = default);
+
     Task<PresignedDownloadUrl> GenerateDownloadUrlAsync(
         string key,
         string downloadFileName,
@@ -17,3 +21,4 @@ public interface IObjectStorageService
 }
 
 public sealed record PresignedDownloadUrl(string Url, DateTime ExpiresAt);
+public sealed record ObjectStorageMetadata(string? ContentType, long SizeBytes, string? ETag);

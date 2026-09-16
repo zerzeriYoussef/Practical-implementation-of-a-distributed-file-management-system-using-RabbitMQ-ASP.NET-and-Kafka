@@ -165,3 +165,4 @@ C:\amamo\MvP_Service\src\MvP.Api\bin\Debug\net9.0\Npgsql.dll
 C:\amamo\MvP_Service\src\MvP.Api\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\amamo\MvP_Service\src\MvP.Api\bin\Debug\net9.0\AWSSDK.Core.dll
 C:\amamo\MvP_Service\src\MvP.Api\bin\Debug\net9.0\AWSSDK.S3.dll
+C:\amamo\MvP_Service\src\MvP.Api\bin\Debug\net9.0\RabbitMQ.Client.dll

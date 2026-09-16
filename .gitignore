@@ -1,2 +1,4 @@
 buildcheck/
 mvp/
+/*dotnet run --project C:\amamo\MvP_Service\src\MvP.Api  
+dotnet run --project C:\amamo\MvP_Service\src\MvP.Worker*/ 

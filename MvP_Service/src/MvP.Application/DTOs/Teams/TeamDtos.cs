@@ -1,4 +1,5 @@
 namespace MvP.Application.DTOs;
+using MvP.Domain.Enums.Storage;
 public record CreateTeamRequest(string Name);
 public record CreateTeamResponse(Guid TeamId, string Name, string JoinCode);
 
@@ -17,4 +18,5 @@ public record UploadTeamFileResponse(
     string FileName,
     string ContentType,
     long SizeBytes,
+    StoredFileStatus Status,
     DateTime CreatedAt);

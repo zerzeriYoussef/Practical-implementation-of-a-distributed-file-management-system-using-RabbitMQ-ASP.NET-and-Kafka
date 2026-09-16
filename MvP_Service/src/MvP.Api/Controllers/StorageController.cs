@@ -19,23 +19,36 @@ public class StorageController : ControllerBase
 
     [HttpPost("teams/{teamId:guid}/files")]
     [Consumes("multipart/form-data")]
-    public async Task<IActionResult> UploadFile(Guid teamId, IFormFile file, CancellationToken cancellationToken)
+    public async Task<IActionResult> UploadFiles(
+        Guid teamId,
+        [FromForm] IFormFileCollection files,
+        CancellationToken cancellationToken)
     {
-        if (file == null || file.Length == 0)
+        if (files.Count == 0)
         {
-            return BadRequest("File is required.");
+            return BadRequest("At least one file is required.");
         }
 
-        await using var stream = file.OpenReadStream();
-        var response = await _storageService.UploadTeamFileAsync(
-            teamId,
-            file.FileName,
-            file.ContentType,
-            file.Length,
-            stream,
-            cancellationToken);
+        var responses = new List<UploadTeamFileResponse>();
 
-        return Ok(response);
+        foreach (var file in files)
+        {
+            if (file.Length == 0)
+            {
+                return BadRequest($"'{file.FileName}' is empty.");
+            }
+
+            await using var stream = file.OpenReadStream();
+            responses.Add(await _storageService.UploadTeamFileAsync(
+                teamId,
+                file.FileName,
+                file.ContentType,
+                file.Length,
+                stream,
+                cancellationToken));
+        }
+
+        return Accepted(new { files = responses });
     }
 
     [HttpGet("teams/{teamId:guid}/files")]

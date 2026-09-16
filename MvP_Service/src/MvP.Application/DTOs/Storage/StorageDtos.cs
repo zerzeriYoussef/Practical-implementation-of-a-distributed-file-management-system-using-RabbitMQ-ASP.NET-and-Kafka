@@ -1,4 +1,5 @@
 namespace MvP.Application.DTOs;
+using MvP.Domain.Enums.Storage;
 
 public record StoredFileResponse(
     Guid FileId,
@@ -7,6 +8,8 @@ public record StoredFileResponse(
     string FileName,
     string ContentType,
     long SizeBytes,
+    StoredFileStatus Status,
+    string? FailureReason,
     DateTime CreatedAt,
     DateTime UpdatedAt);
 

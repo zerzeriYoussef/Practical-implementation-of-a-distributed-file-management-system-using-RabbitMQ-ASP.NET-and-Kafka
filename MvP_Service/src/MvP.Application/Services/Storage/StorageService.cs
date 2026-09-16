@@ -13,19 +13,22 @@ public sealed class StorageService
     private readonly IStorageKeyBuilder _storageKeyBuilder;
     private readonly IObjectStorageService _objectStorageService;
     private readonly ICurrentUser _currentUser;
+    private readonly IFileProcessingPublisher _fileProcessingPublisher;
 
     public StorageService(
         ITeamRepository teamRepository,
         IStoredFileRepository storedFileRepository,
         IStorageKeyBuilder storageKeyBuilder,
         IObjectStorageService objectStorageService,
-        ICurrentUser currentUser)
+        ICurrentUser currentUser,
+        IFileProcessingPublisher fileProcessingPublisher)
     {
         _teamRepository = teamRepository;
         _storedFileRepository = storedFileRepository;
         _storageKeyBuilder = storageKeyBuilder;
         _objectStorageService = objectStorageService;
         _currentUser = currentUser;
+        _fileProcessingPublisher = fileProcessingPublisher;
     }
 
     public async Task<UploadTeamFileResponse> UploadTeamFileAsync(
@@ -56,17 +59,21 @@ public sealed class StorageService
             FileName = GetSafeFileName(fileName),
             ContentType = string.IsNullOrWhiteSpace(contentType) ? "application/octet-stream" : contentType,
             SizeBytes = sizeBytes,
+            Status = MvP.Domain.Enums.Storage.StoredFileStatus.Queued,
             CreatedAt = now,
             UpdatedAt = now
         };
 
         await _objectStorageService.UploadAsync(s3Key, content, storedFile.ContentType, cancellationToken);
         await _storedFileRepository.AddAsync(storedFile, cancellationToken);
+        await _fileProcessingPublisher.PublishAsync(
+            new MvP.Application.Messaging.FileProcessingMessage(storedFile.Id, storedFile.TeamId, storedFile.S3Key),
+            cancellationToken);
 
         return new UploadTeamFileResponse(
             storedFile.Id, storedFile.TeamId, storedFile.OwnerUserId, storedFile.UploadedByUserId,
             storedFile.S3Bucket, storedFile.S3Key, storedFile.FileName, storedFile.ContentType,
-            storedFile.SizeBytes, storedFile.CreatedAt);
+            storedFile.SizeBytes, storedFile.Status, storedFile.CreatedAt);
     }
 
     public async Task<IReadOnlyCollection<StoredFileResponse>> GetTeamFilesAsync(
@@ -160,7 +167,7 @@ public sealed class StorageService
 
     private static StoredFileResponse ToResponse(StoredFile file) => new(
         file.Id, file.TeamId, file.UploadedByUserId, file.FileName, file.ContentType,
-        file.SizeBytes, file.CreatedAt, file.UpdatedAt);
+        file.SizeBytes, file.Status, file.FailureReason, file.CreatedAt, file.UpdatedAt);
 
     private static string GetSafeFileName(string fileName)
     {
